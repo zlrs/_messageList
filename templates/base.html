@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <script></script>
+</head>
+<body>
+{% block header %}
+    <header>
+        <h1 class="slogan">欢迎来到留言板~</h1>
+        <p><a id="top" href="#bottom" title="go bottom">闪现到页面底端</a></p>
+    </header>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+    <footer>
+        <p>@ 2019 Yuanqing Zhu <a href="https://github.com/zlrs" title="my Github page">Find me on Github</a></p>
+        <p><a id="bottom" href="#top" title="go top">闪现到页面顶端</a></p>
+    </footer>
+{% endblock %}
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 import click
 
+# msglist 是一个包。from msglist 就是 from 此包的 __init__.py 
 from msglist import app, db
 from msglist.models import Message
 
@@ -31,7 +32,7 @@ def forge(count):
     for i in range(count):
         message = Message(
             name=fake.name(),
-            body=fake.sentence(),
+            note=fake.sentence(),
             timestamp=fake.date_time_this_year()
         )
         db.session.add(message)

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}留言板{% endblock %}
+
+{% block content %}
+    <div class="msg-form">
+        <form method="post" action="/">
+            {{ form.csrf_token }}
+            {{ form.name.label }} <br> {{ form.name }} <br>
+            {{ form.note.label }} <br> {{ form.note }} <br>
+            {{ form.submit }}
+        </form>
+    </div>
+    <h5>{{ messages|length }} messages
+    </h5>
+    <div class="list-group">
+        {% for message in messages %}
+            <div class="list-group-item">
+                <h5>{{ message.name }}
+                    <small> #{{ loop.revindex }}</small>
+                </h5>
+                <small>
+                    {{ message.timestamp }}
+                </small>
+            </div>
+            <p>{{ message.note }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
+

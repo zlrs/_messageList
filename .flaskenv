@@ -1,2 +1,0 @@
-FLASK_APP=msglist
-FLASK_ENV=development
